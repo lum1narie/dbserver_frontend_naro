@@ -7,6 +7,7 @@ export default defineConfig({
   proxy: {
     "^/api": {
       target: process.env.VUE_APP_SERVER,
+      changeOrigin: true,
       rewrite: (path) => path.replace(/^\/api/, "/"),
     },
   },
